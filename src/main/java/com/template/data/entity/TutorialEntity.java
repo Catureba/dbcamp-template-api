@@ -1,6 +1,7 @@
 package com.template.data.entity;
 
 import jakarta.persistence.*;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "tutorials")

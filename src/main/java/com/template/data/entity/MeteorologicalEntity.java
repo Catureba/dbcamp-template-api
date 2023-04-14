@@ -46,4 +46,77 @@ public class MeteorologicalEntity {
         this.date = date;
         this.shift = shift;
     }
+    public MeteorologicalEntity(){}
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public Float getWindSpeed() {
+        return windSpeed;
+    }
+
+    public void setWindSpeed(Float windSpeed) {
+        this.windSpeed = windSpeed;
+    }
+
+    public Float getMaxTemp() {
+        return maxTemp;
+    }
+
+    public void setMaxTemp(Float maxTemp) {
+        this.maxTemp = maxTemp;
+    }
+
+    public Float getMinTemp() {
+        return minTemp;
+    }
+
+    public void setMinTemp(Float minTemp) {
+        this.minTemp = minTemp;
+    }
+
+    public Float getHumidity() {
+        return humidity;
+    }
+
+    public void setHumidity(Float humidity) {
+        this.humidity = humidity;
+    }
+
+    public Float getPrecipitation() {
+        return precipitation;
+    }
+
+    public void setPrecipitation(Float precipitation) {
+        this.precipitation = precipitation;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    public Shift getShift() {
+        return shift;
+    }
+
+    public void setShift(Shift shift) {
+        this.shift = shift;
+    }
 }
