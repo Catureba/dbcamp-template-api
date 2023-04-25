@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 public interface MeteorologicalRepository extends JpaRepository<MeteorologicalEntity, Long> {
-    List<MeteorologicalEntity> findAllByCity(String city);
+    List<MeteorologicalEntity> findByCity(String city);
+
 
 }

@@ -14,23 +14,15 @@ public class MeteorologicalService {
     @Autowired
     MeteorologicalRepository meteorologicalRepository;
 
-    public List<MeteorologicalEntity> getAll(String city) {
-
-        if (city == null)
-            return meteorologicalRepository.findAll();
-        else
-            return meteorologicalRepository.findAllByCity(city);
-    }
     public List<MeteorologicalEntity> findAll(){
         return meteorologicalRepository.findAll();
     }
     public List<MeteorologicalEntity> findByCity(@RequestBody String city){
-        return meteorologicalRepository.findAllByCity(city);
+        return meteorologicalRepository.findByCity(city);
     }
     public MeteorologicalEntity create(@RequestBody MeteorologicalEntity meteorological){
         return meteorologicalRepository.save(meteorological);
     }
-    public void deleteMeteorological(@PathVariable("id")long id){ meteorologicalRepository.deleteById(id);}
     public void deleteAll() {
         meteorologicalRepository.deleteAll();
     }

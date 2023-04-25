@@ -18,9 +18,9 @@ public class MeteorologicalController {
     MeteorologicalService meteorologicalService;
 
     @GetMapping("/meteorologicals")
-    public ResponseEntity<List<MeteorologicalEntity>> findAllMeteorological(@RequestParam(required = false)String city){
+    public ResponseEntity<List<MeteorologicalEntity>> findAllMeteorological(){
         try{
-            List<MeteorologicalEntity> meteorological = meteorologicalService.getAll(city);
+            List<MeteorologicalEntity> meteorological = meteorologicalService.findAll();
             if(meteorological.isEmpty()){
                 return new ResponseEntity<>(HttpStatus.NO_CONTENT);
             }else{
