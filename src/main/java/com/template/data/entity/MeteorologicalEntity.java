@@ -39,5 +39,10 @@ public class MeteorologicalEntity {
     @Column(name = "climate")
     private Climate climate;
 
+    public MeteorologicalEntity() {
 
+    }
+    public MeteorologicalEntity(String city) {
+        this.city = city;
+    }
 }

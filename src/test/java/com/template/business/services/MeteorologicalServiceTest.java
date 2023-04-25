@@ -29,6 +29,7 @@ class MeteorologicalServiceTest {
     }
 
     @Test
+    @DisplayName("Test do GET findAll/ Deve checar se o retorno do metodo findAll() é igual a quantidade de dados mockados")
     void testFindAll() {
         List<MeteorologicalEntity> meteorologicalEntities = new ArrayList<>();
         meteorologicalEntities.add(new MeteorologicalEntity());
@@ -43,22 +44,26 @@ class MeteorologicalServiceTest {
     }
 
     @Test
+    @DisplayName("Test do GET findByCity/ Deve checar se o retorno do metodo findByCity() é igual a quantidade de dados mockados")
     void testFindByCity() {
-        String city = "salvador";
+        String city = "madre de deus";
+        String anotherCity = "madre de deus";
+
         List<MeteorologicalEntity> meteorologicalEntities = new ArrayList<>();
-        meteorologicalEntities.add(new MeteorologicalEntity());
-        meteorologicalEntities.add(new MeteorologicalEntity());
+
+        meteorologicalEntities.add(new MeteorologicalEntity(anotherCity));
+        meteorologicalEntities.add(new MeteorologicalEntity(city));
 
         when(meteorologicalRepository.findByCity(city)).thenReturn(meteorologicalEntities);
         List<MeteorologicalEntity> result = meteorologicalService.findByCity(city);
         verify(meteorologicalRepository).findByCity(city);
-
 
         assertNotNull(result);
         assertEquals(2, result.size());
     }
 
     @Test
+    @DisplayName("Test do POST create/ Deve checar se o retorno do metodo create() é igual ao POST feito")
     void testCreate() {
         MeteorologicalEntity meteorologicalEntity = new MeteorologicalEntity();
 
